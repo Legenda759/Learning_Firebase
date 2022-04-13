@@ -6,15 +6,34 @@
 //
 
 import UIKit
+import Firebase
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        FirebaseApp.configure()
+        settingsNavigation()
         return true
+    }
+    
+    func settingsNavigation() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        appearance.backgroundColor = UIColor.white
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+//        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        let proxy = UINavigationBar.appearance()
+        proxy.tintColor = .black
     }
 
     // MARK: UISceneSession Lifecycle
