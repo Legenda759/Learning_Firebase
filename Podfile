@@ -9,7 +9,6 @@ target 'Learning_Alamofire' do
 
 pod 'Alamofire'
 pod 'SnapKit'
-pod 'PlaceholderTextField'
 pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
