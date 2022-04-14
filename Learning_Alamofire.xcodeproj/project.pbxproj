@@ -25,6 +25,7 @@
 		985A73B427FD76A100032D8E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A73B327FD76A100032D8E /* BaseView.swift */; };
 		985A73B627FD76D600032D8E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A73B527FD76D600032D8E /* SignInView.swift */; };
 		985A73BA27FDCA6300032D8E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A73B927FDCA6300032D8E /* SignUpView.swift */; };
+		98A9E01E2807E16600773D04 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9E01D2807E16600773D04 /* Defaults.swift */; };
 		A03A98FEFCB97560BFB80275 /* Pods_Learning_Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D08378EAEBC8958AAC73A8 /* Pods_Learning_Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		985A73B527FD76D600032D8E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInView.swift; path = Learning_Alamofire/SignInView.swift; sourceTree = SOURCE_ROOT; };
 		985A73B927FDCA6300032D8E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Learning_Alamofire/SignUpView.swift; sourceTree = SOURCE_ROOT; };
 		989A8C9CD1992BAF945DF496 /* Pods-Learning_Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learning_Alamofire.release.xcconfig"; path = "Target Support Files/Pods-Learning_Alamofire/Pods-Learning_Alamofire.release.xcconfig"; sourceTree = "<group>"; };
+		98A9E01D2807E16600773D04 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		C9D08378EAEBC8958AAC73A8 /* Pods_Learning_Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learning_Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 		981B118D27FD4632000DB2E7 /* Learning_Alamofire */ = {
 			isa = PBXGroup;
 			children = (
+				98A9E01C2807E14700773D04 /* SaveUser */,
 				983E2A202805792F0026B202 /* model */,
 				983E2A1D280578460026B202 /* networking */,
 				985A73B027FD75B600032D8E /* views */,
@@ -148,6 +151,14 @@
 				985A73B927FDCA6300032D8E /* SignUpView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		98A9E01C2807E14700773D04 /* SaveUser */ = {
+			isa = PBXGroup;
+			children = (
+				98A9E01D2807E16600773D04 /* Defaults.swift */,
+			);
+			path = SaveUser;
 			sourceTree = "<group>";
 		};
 		9E13610F1E8836809973DC0C /* Pods */ = {
@@ -287,6 +298,7 @@
 				985A73B627FD76D600032D8E /* SignInView.swift in Sources */,
 				985A73BA27FDCA6300032D8E /* SignUpView.swift in Sources */,
 				981B11A827FD6FEC000DB2E7 /* SignUpViewController.swift in Sources */,
+				98A9E01E2807E16600773D04 /* Defaults.swift in Sources */,
 				983E2A22280579400026B202 /* User.swift in Sources */,
 				983E2A26280579AB0026B202 /* StorageStore.swift in Sources */,
 			);

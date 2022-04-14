@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import KeychainSwift
 
 class SignInViewController: BaseViewController {
     
@@ -14,10 +15,11 @@ class SignInViewController: BaseViewController {
     let signInView = SignInView(frame: .zero)
     
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if session.session != nil {
+        if SaveUser.user.getBool("login") != false {
             sceneDelegate().callPostViewController()
         }
         initviews()
@@ -69,13 +71,14 @@ class SignInViewController: BaseViewController {
     }
     
     @objc func btnSignInTapped() {
-        SessionStore().signIn(email: signInView.txtFieldEmail.text ?? " ", password: signInView.txtFieldPassword.text ?? " ", handler: {(res, err) in
+        SessionStore().signIn(email: signInView.txtFieldEmail.text ?? " ", password: signInView.txtFieldPassword.text ?? " ", handler: { [self](res, err) in
             if err != nil {
                 print("Check email or password")
                 return
             }
             print("200 ok")
-            UIApplication.shared.delegate?.window??.rootViewController = UINavigationController(rootViewController: PostViewController())
+            SaveUser.storeInfos(login: true)
+//            UIApplication.shared.delegate?.window??.rootViewController = UINavigationController(rootViewController: PostViewController())
             self.sceneDelegate().callPostViewController()
         })
         

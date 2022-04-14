@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class PostViewController: BaseViewController {
     
     let session = SessionStore()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if SaveUser.user.getBool("login") != true {
+            sceneDelegate().callSignInViewController()
+        }
         initViews()
         // Do any additional setup after loading the view.
     }
@@ -25,7 +30,7 @@ class PostViewController: BaseViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_logout"), style: .plain, target: self, action: #selector(logoutTapped))
         
-        title = session.session.name
+        title = session.session?.email
         
     }
     
@@ -35,6 +40,7 @@ class PostViewController: BaseViewController {
     
     @objc func logoutTapped() {
         sceneDelegate().callSignInViewController()
+        SaveUser.storeInfos(login: false)
     }
 
     /*
